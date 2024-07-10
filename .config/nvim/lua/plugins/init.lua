@@ -29,7 +29,7 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua",
-       "html", "css", "go", "javascript", "typescript", "sql", "json", "python", "toml"
+       "html", "css", "go", "javascript", "typescript", "sql", "json", "python", "toml", "xml", "http", "graphql", "jsdoc"
   		},
   	},
   },
