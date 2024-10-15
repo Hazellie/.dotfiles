@@ -7,6 +7,7 @@ local options = {
     json = { "jq" },
     javascript = { { "prettierd", "prettier" } },
     typescript = { { "prettierd", "prettier" } },
+    c_sharp = { "csharpier" },
   },
 
   format_on_save = {
@@ -16,4 +17,4 @@ local options = {
   },
 }
 
-require("conform").setup(options)
+return options
