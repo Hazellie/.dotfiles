@@ -30,7 +30,6 @@ M.mason = {
     "jsonlint",
     "ruff",
     "taplo",
-    "csharp-language-server",
     "csharpier",
     "netcoredbg",
   },
