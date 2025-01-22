@@ -3,10 +3,9 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    sql = { "sqlfluff" },
     json = { "jq" },
-    javascript = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
+    javascript = { "prettierd", "prettier", stop_after_first = true },
+    typescript = { "prettierd", "prettier", stop_after_first = true },
     c_sharp = { "csharpier" },
   },
 
