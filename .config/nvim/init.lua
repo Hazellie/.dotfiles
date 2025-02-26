@@ -35,3 +35,6 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- for treesitter to treat Xaml as Xml so we get nice syntax highlighting
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = { "*.xaml" }, command = "setf xml" })
