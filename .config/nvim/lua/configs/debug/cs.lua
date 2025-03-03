@@ -69,7 +69,7 @@ for _, lang in ipairs { "cs", "fsharp", "vb" } do
         return vars or nil
       end,
       program = function()
-        require("overseer").enable_dap()
+        -- require("overseer").enable_dap()
         local dll = ensure_dll()
         return dll.relative_dll_path
       end,
@@ -77,7 +77,7 @@ for _, lang in ipairs { "cs", "fsharp", "vb" } do
         local dll = ensure_dll()
         return dll.relative_project_path
       end,
-      preLaunchTask = "Build .NET App With Spinner",
+      -- preLaunchTask = "Build .NET App With Spinner",
     },
   }
 

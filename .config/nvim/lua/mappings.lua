@@ -40,7 +40,7 @@ map({ "n", "v" }, "<leader>db", function()
   require("dap").toggle_breakpoint()
 end, { desc = "Toggle Breakpoint" })
 
-map({ "n", "v" }, "<leader>dc", function()
+map({ "n", "v" }, "<F5>", function()
   require("dap").continue()
 end, { desc = "Continue" })
 
