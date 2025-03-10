@@ -33,7 +33,7 @@ map({ "n", "v" }, "<leader>dR", function()
 end, { desc = "Run default configuration" })
 
 map({ "n", "v" }, "<leader>dB", function()
-  require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
+  require("dap").set__breakpoint(vim.fn.input "Breakpoint condition: ")
 end, { desc = "Breakpoint Condition" })
 
 map({ "n", "v" }, "<leader>db", function()
