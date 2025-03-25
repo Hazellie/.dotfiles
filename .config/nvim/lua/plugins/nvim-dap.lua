@@ -21,16 +21,12 @@ return {
       end
 
       local function close()
-        local current_buf = vim.api.nvim_get_current_buf()
-
         vim.api.nvim_echo({ { "Press any key to close debugger...", "Normal" } }, true, {})
         vim.fn.getchar()
 
         vim.api.nvim_out_write "\n"
 
         dapui.close()
-
-        vim.api.nvim_set_current_buf(current_buf)
 
         if visible then
           nvim_tree_api.tree.open()
