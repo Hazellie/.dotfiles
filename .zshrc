@@ -81,6 +81,7 @@ alias lt="eza --tree --level=2 --long --icons --git"
 alias c='clear'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias cat='bat'
+alias lvim='NVIM_APPNAME="lvim" nvim'
 
 # Add nvm
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
