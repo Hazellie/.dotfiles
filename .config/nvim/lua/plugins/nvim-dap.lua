@@ -7,19 +7,45 @@ return {
       local dap = require "dap"
       local dapui = require "dapui"
 
+      local nvim_tree_view = require "nvim-tree.view"
+      local nvim_tree_api = require "nvim-tree.api"
+
+      local visible = false
+
+      local function open()
+        visible = nvim_tree_view.is_visible()
+        if visible then
+          nvim_tree_api.tree.close()
+        end
+        dapui.open()
+      end
+
+      local function close()
+        vim.api.nvim_echo({ { "Press any key to close debugger...", "Normal" } }, true, {})
+        vim.fn.getchar()
+
+        vim.api.nvim_out_write "\n"
+
+        dapui.close()
+
+        if visible then
+          nvim_tree_api.tree.open()
+        end
+      end
+
       dapui.setup()
 
       dap.listeners.before.attach.dapui_config = function()
-        dapui.open()
+        open()
       end
       dap.listeners.before.launch.dapui_config = function()
-        dapui.open()
+        open()
       end
       dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
+        close()
       end
       dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
+        close()
       end
     end,
   },
@@ -47,12 +73,14 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
+
     config = function()
       require "configs.debug.cs"
 
       vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
     end,
   },
+
   {
     "folke/lazydev.nvim",
     event = "VeryLazy",
