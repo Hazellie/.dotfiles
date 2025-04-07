@@ -75,7 +75,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpat
 zstyle ':completion:*' menu no
 
 # Aliases
-# alias ls='eza --color'
 alias ls="eza --long --icons --git -a"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias c='clear'
@@ -86,7 +85,8 @@ alias cat='bat'
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+#source /usr/share/nvm/install-nvm-exec
+
 
 export PATH="$PATH:/home/hazel/.dotnet/tools"
 
