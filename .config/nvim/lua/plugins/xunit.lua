@@ -1,10 +1,10 @@
 return {
-  {
-    "Hazellie/xunit.nvim",
-
-    event = "VeryLazy",
-    config = function()
-      require("xunit").setup()
-    end,
-  },
+  -- {
+  --   "Hazellie/xunit.nvim",
+  --
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("xunit").setup()
+  --   end,
+  -- },
 }
