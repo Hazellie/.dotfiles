@@ -16,3 +16,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+  callback = function(evt)
+    vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
+  end,
+})
