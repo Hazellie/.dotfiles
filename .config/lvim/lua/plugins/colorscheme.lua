@@ -118,8 +118,8 @@ return {
 
           ["@operator"] = { fg = "#BFC6D4" },
 
-          -- ["@punctuation.delimiter"] = { fg = "#F38BA8" },
-          -- ["@punctuation.bracket"] = { fg = "#F38BA8" },
+          ["@punctuation.delimiter"] = { fg = "#F38BA8" },
+          ["@punctuation.bracket"] = { fg = "#F38BA8" },
           ["@punctuation.special"] = { fg = "#89DCEB" },
         },
       },
