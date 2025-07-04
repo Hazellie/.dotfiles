@@ -4,6 +4,12 @@ return {
     recommended = true,
     desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
+    config = function()
+      require("config.cs")
+
+      vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
+    end,
+
     dependencies = {
       {
         "rcarriga/nvim-dap-ui",
@@ -96,7 +102,7 @@ return {
         event = "VeryLazy",
         config = function()
           local dm = require("debugmaster")
-          vim.keymap.set({ "n", "t", "v" }, "<leader>dm", dm.mode.toggle, { nowait = true })
+          vim.keymap.set({ "n", "t", "v" }, "<leader>dm", dm.mode.toggle, { desc = "Toggle Debug Mode", nowait = true })
         end,
       },
 

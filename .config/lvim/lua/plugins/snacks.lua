@@ -7,6 +7,9 @@ return {
           position = "float",
         },
       },
+      picker = {
+        hidden = true, -- for hidden files
+      },
     },
   },
 }

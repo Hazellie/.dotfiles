@@ -23,3 +23,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
   end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("lazyvim.util").root.get = vim.loop.cwd
+  end,
+})
