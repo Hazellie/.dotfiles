@@ -36,7 +36,17 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     config = function()
-      require("easy-dotnet").setup()
+      require("easy-dotnet").setup({
+        lsp = {
+          enabled = false,
+          roslynator_enabled = false,
+          analyzer_assemblies = {},
+          config = {},
+        },
+        auto_bootstrap_namespace = {
+          enabled = false,
+        },
+      })
     end,
   },
 }

@@ -94,5 +94,6 @@ export PATH="$PATH:/home/hazel/.dotnet/tools"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+export BROWSER=wslview
 # export PATH=/home/hazel/.nvm/versions/node/v23.10.0/bin:/home/hazel/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/bin
 export PATH=/home/hazel/.nvm/versions/node/v23.11.0/bin:/home/hazel/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/bin
