@@ -82,18 +82,40 @@ alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {
 alias cat='bat'
 alias lvim='NVIM_APPNAME="lvim" nvim'
 
+if command -v nvim >/dev/null 2>&1; then
+    if command -v lvim >/dev/null 2>&1; then
+        export EDITOR='zsh -c "NVIM_APPNAME=\"lvim\" nvim \"$@\"" _'
+      else
+        export EDITOR='nvim'
+    fi
+elif command -v vim >/dev/null 2>&1; then
+    export EDITOR='vim'
+else
+    export EDITOR='nano'
+fi
+
+# Open buffer line in director 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Add nvm
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
-#source /usr/share/nvm/install-nvm-exec
-
 
 export PATH="$PATH:/home/hazel/.dotnet/tools"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
 export BROWSER=wslview
-# export PATH=/home/hazel/.nvm/versions/node/v23.10.0/bin:/home/hazel/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/bin
-export PATH=/home/hazel/.nvm/versions/node/v23.11.0/bin:/home/hazel/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/bin
+export PATH="/home/hazel/.nvm/versions/node/v23.11.0/bin:/home/hazel/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hazel/.dotnet/tools:/home/hazel/.dotnet/tools:/home/hazel/bin:$PATH"
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+
+if [[ -d /mnt/c/Windows/System32 ]]; then
+  export PATH="$PATH:/mnt/c/Windows/System32:/mnt/c/Windows"
+fi
