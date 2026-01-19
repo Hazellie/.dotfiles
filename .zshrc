@@ -119,3 +119,5 @@ eval "$(pyenv init --path)"
 if [[ -d /mnt/c/Windows/System32 ]]; then
   export PATH="$PATH:/mnt/c/Windows/System32:/mnt/c/Windows"
 fi
+
+export PATH="$HOME/.aspire/bin:$PATH"
