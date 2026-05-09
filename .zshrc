@@ -75,7 +75,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpat
 zstyle ':completion:*' menu no
 
 # Aliases
-alias ls="eza --long --icons --git -a"
+alias ls="eza --long --icons --git -a -h"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias c='clear'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
@@ -123,4 +123,4 @@ if [[ -d /mnt/c/Windows/System32 ]]; then
   export PATH="$PATH:/mnt/c/Windows/System32:/mnt/c/Windows"
 fi
 
-export PATH="$HOME/.aspire/bin:$PATH"
+export SSL_CERT_DIR="$SSL_CERT_DIR:/etc/ssl/certs:/home/hazel/.aspnet/dev-certs/trust"

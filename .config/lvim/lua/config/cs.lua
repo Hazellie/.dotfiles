@@ -11,6 +11,36 @@ local function get_csproj_name()
   return csproj
 end
 
+-- local function get_csproj_name()
+--   local bufnr = vim.api.nvim_get_current_buf()
+--   local clients = vim.lsp.get_clients({ bufnr = bufnr })
+--
+--   for _, client in ipairs(clients) do
+--     if client.name:match("roslyn") then
+--       -- Try workspace folders first
+--       if client.config.workspace_folders then
+--         for _, folder in ipairs(client.config.workspace_folders) do
+--           -- fallback: search within workspace root
+--           local files = vim.fn.glob(folder.name .. "/**/*.csproj", false, true)
+--           if #files > 0 then
+--             return vim.fn.fnamemodify(files[1], ":t:r")
+--           end
+--         end
+--       end
+--
+--       -- Some servers expose root_dir
+--       if client.config.root_dir then
+--         local files = vim.fn.glob(client.config.root_dir .. "/**/*.csproj", false, true)
+--         if #files > 0 then
+--           return vim.fn.fnamemodify(files[1], ":t:r")
+--         end
+--       end
+--     end
+--   end
+--
+--   return nil
+-- end
+
 -- Rebuilds the project before starting the debug session
 ---@param co thread
 local function rebuild_project(co, path)
